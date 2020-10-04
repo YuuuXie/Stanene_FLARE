@@ -1,6 +1,6 @@
 # FLARE Force Field for Stanene
 
-- This repository provides the code for developing [FLARE](https://github.com/mir-group/flare) force field for stanene, which is used to generate results in this [paper [1]](https://arxiv.org/abs/2008.11796).
+- This repository provides the code for developing [FLARE](https://github.com/mir-group/flare) force field of stanene, which is used to generate results in this [paper [1]](https://arxiv.org/abs/2008.11796).
 - The generated data reported in the paper has been uploaded to Materials Cloud Archive. You can see it [here [2]](https://archive.materialscloud.org/record/2020.99), including LAMMPS coefficient file for the force field, trajectories and videos.
 
 ## About the versions
