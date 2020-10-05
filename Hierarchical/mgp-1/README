@@ -1,0 +1,5 @@
+1. train hyps
+2. use optimized hyps to build MGP
+3. run LAMMPS with MGP
+4. predict uncertainties 
+5. pick up two snapshots for DFT
