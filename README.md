@@ -5,7 +5,7 @@
 
 ## About the versions
 
-- The data is NOT generated from the latest version of FLARE. The original version of code for the data is released as [v1.0](). 
+- The data is NOT generated from the latest version of FLARE. The original version of code for the data is released as [v1.0](https://github.com/YuuuuXie/Stanene_FLARE/releases/tag/v1.0). 
 - But we will try catching up with the latest FLARE repository, and we recommend you to use the latest code that we provide.
 
 ## The code consists of
