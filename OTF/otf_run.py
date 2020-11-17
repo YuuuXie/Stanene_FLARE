@@ -1,4 +1,5 @@
 import numpy as np
+import os
 from copy import deepcopy
 
 from ase import units
@@ -8,65 +9,61 @@ from ase.md.velocitydistribution import (
     ZeroRotation,
 )
 
-from flare.ase.otf_md import otf_md
-from flare.ase.logger import OTFLogger
+from flare.ase.otf import ASE_OTF
+import atoms_setup, flare_setup, dft_setup
 
-import atom_setup, flare_setup, qe_setup
+def init_md(super_cell, temperature):
+    # set up MD engine
+    MaxwellBoltzmannDistribution(super_cell, temperature * units.kB)
+    Stationary(super_cell)  # zero linear momentum
+    ZeroRotation(super_cell)  # zero angular momentum
 
-np.random.seed(12345)
 
-super_cell = atom_setup.super_cell
-nat = len(super_cell.positions)
 
-flare_calc = deepcopy(flare_setup.flare_calc)
-super_cell.set_calculator(flare_calc)
-
-dft_calc = qe_setup.dft_calc
-
-# set up OTF MD engine
-md_engine = "VelocityVerlet"
-dt = 1 * units.fs
-md_params = {"timestep": dt, "trajectory": None, "dt": None}
-
-atoms_added = 1
-otf_params = {
-    "dft_calc": dft_calc,
-    "init_atoms": list(range(atoms_added)),
-    "std_tolerance_factor": 1.0,
-    "max_atoms_added": atoms_added,
-    "freeze_hyps": 0,
-    "restart_from": None,
-    "use_mapping": super_cell.calc.use_mapping,
-    "non_mapping_steps": [i for i in range(100)]
-    + [i + 20000 for i in range(200)]
-    + [i + 40000 for i in range(500)]
-    + [i + 70000 for i in range(500)],
-}
+print("modules loaded")
 
 temperature = 200
+super_cell = atoms_setup.get_atoms(temperature, multiplier=[2,2,1])
 
-# jitter atomic positions
-xi = np.random.standard_normal((nat, 3))
-kT = temperature * units.kB
-init_v = np.sqrt(kT / super_cell.get_masses())[:, np.newaxis] * xi
-delta_pos = init_v * dt
-super_cell.positions += delta_pos
+flare_calc = flare_setup.get_flare_calc()
+super_cell.set_calculator(flare_calc)
 
-# intialize velocity
-MaxwellBoltzmannDistribution(super_cell, kT)
-Stationary(super_cell)  # zero linear momentum
-ZeroRotation(super_cell)  # zero angular momentum
+#n_cpus = 256
+#npool = 16
+#kpts = (4, 4, 4)
+n_cpus = 32
+npool = 1
+kpts = [1, 1, 1]
+dft_calc = dft_setup.get_dft_calc(n_cpus, npool, kpts)
 
-test_otf = otf_md(md_engine, super_cell, md_params, otf_params)
+init_md(super_cell, temperature)
+md_engine = "VelocityVerlet"
+md_kwargs = {}
 
-# set up logger
-otf_logger = OTFLogger(
-    test_otf, super_cell, logfile="otf_train.log", mode="w", data_in_logfile=True
+# set up OTF engine
+N_steps = 3
+atoms_added = 8
+otf_params = {
+    "init_atoms": [i for i in range(atoms_added)],
+    "output_name": "otf",
+    "std_tolerance_factor": 2.0,
+    "max_atoms_added": atoms_added,
+    "freeze_hyps": 100,
+    "write_model": 3,
+    "rescale_temps": [600, 800, 1300],
+    "rescale_steps": [10000, 20000, 30000],
+    "store_dft_output": [["scf.pwi", "scf.pwo"], "dft"],
+}
+
+test_otf = ASE_OTF(
+    super_cell,
+    timestep=1 * units.fs,
+    number_of_steps=N_steps,
+    dft_calc=dft_calc,
+    md_engine=md_engine,
+    md_kwargs=md_kwargs,
+    **otf_params
 )
-test_otf.attach(otf_logger, interval=1)
 
-# run otf
-number_of_steps = 100000
-rescale_temp = [600, 800, 1300]
-rescale_steps = [20000, 40000, 70000]
-test_otf.otf_run(number_of_steps, rescale_temp, rescale_steps)
+print("otf run!")
+test_otf.run()

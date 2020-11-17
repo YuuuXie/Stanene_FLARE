@@ -1,0 +1,6 @@
+&input
+  fildyn = '/n/kozinsky_lab/Users/xiey/Stanene/beta-0/ph/beta.dyn',
+  zasr='crystal',
+  flfrc='./beta.fc'
+/
+

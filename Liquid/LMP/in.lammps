@@ -1,0 +1,30 @@
+units metal 
+boundary p p p 
+atom_style atomic
+#dimension  2
+newton off
+read_data data.lammps
+replicate 4 4 1
+
+read_dump NVT_773K_64atoms.trj 1259000 x y z vx vy vz fx fy fz
+change_box all y final 0.0 31.7421
+
+### interactions 
+pair_style mgp
+pair_coeff * * Sn.mgp-3 Sn yes yes 
+#pair_style tersoff
+#pair_coeff * * Sn.tersoff Sn  
+
+mass * 118.71 
+
+velocity all create 773 497149 dist gaussian
+### run
+
+#fix  1 all nve
+fix 1 all nvt temp 773 773 100
+#fix 1 all npt temp 1073 1073 100 x 0.0 0.0 100 y 0.0 0.0 100 
+dump dump_all all custom 1000 traj.lammps id type x y z vx vy vz fx fy fz
+# dump_modify dump_all sort
+#timer every 100
+#    timestep 0.02
+run 3000000

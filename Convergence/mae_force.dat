@@ -1,0 +1,22 @@
+
+Lmod is automatically replacing "openmpi/4.0.1-fasrc01" with
+"impi/2017.2.174-fasrc01".
+
+
+Inactive Modules:
+  1) qe/6.3-fasrc01
+
+training size 100
+gp_f mean, max, min -3.3676765080296414e-16 1.1275436765495108 -1.0981942799499542
+gp_v mean, max, min 0.6408752446084648 0.6630515959104735 0.6121263313836868
+/n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/flare/flare/mgp/mapxb.py:528: UserWarning: The minimal distance in training data is lower than the current lower bound, will reset lower bound to 2.46170619855329
+  "The minimal distance in training data is lower than "
+force MAE 1 0.25117587156684823 5.181040781584064e-18
+/n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/flare/flare/mgp/mapxb.py:528: UserWarning: The minimal distance in training data is lower than the current lower bound, will reset lower bound to 2.46170619855329
+  "The minimal distance in training data is lower than "
+force MAE 2 0.1437238376784085 1.1657341758564143e-17
+force MAE 3 0.07432418545611523 -3.3306690738754695e-18
+force MAE 4 0.030808536309525677 -1.1324274851176597e-16
+force MAE 5 0.003488401070355379 1.8392694774623427e-16
+force MAE 6 0.00018715484298765516 -2.311114262928034e-16
+force MAE 7 7.224780918560121e-06 4.318767565791859e-16

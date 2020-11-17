@@ -1,0 +1,119 @@
+
+     Program Q2R v.6.3 starts on  1Nov2020 at 19:19: 6 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on    32 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =      32
+
+     reading grid info from file /n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/alpha/Phonon/ph/alpha.dyn0    
+  reading force constants from file 
+ /n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/alpha/Phonon/ph/alpha.dyn1
+  Dielectric Tensor not found
+  nqs=            1
+ q=   0.00000000  0.00000000  0.00000000
+  reading force constants from file 
+ /n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/alpha/Phonon/ph/alpha.dyn2
+  nqs=            8
+ q=   0.17677670  0.17677670 -0.17677670
+ q=  -0.17677670 -0.17677670 -0.17677670
+ q=   0.17677670 -0.17677670 -0.17677670
+ q=  -0.17677670 -0.17677670  0.17677670
+ q=  -0.17677670  0.17677670 -0.17677670
+ q=   0.17677670  0.17677670  0.17677670
+ q=  -0.17677670  0.17677670  0.17677670
+ q=   0.17677670 -0.17677670  0.17677670
+  reading force constants from file 
+ /n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/alpha/Phonon/ph/alpha.dyn3
+  nqs=            4
+ q=  -0.35355339 -0.35355339  0.35355339
+ q=  -0.35355339 -0.35355339 -0.35355339
+ q=  -0.35355339  0.35355339  0.35355339
+ q=  -0.35355339  0.35355339 -0.35355339
+  reading force constants from file 
+ /n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/alpha/Phonon/ph/alpha.dyn4
+  nqs=            6
+ q=   0.35355339  0.00000000  0.00000000
+ q=   0.00000000  0.00000000  0.35355339
+ q=   0.00000000 -0.35355339  0.00000000
+ q=   0.00000000  0.00000000 -0.35355339
+ q=  -0.35355339  0.00000000  0.00000000
+ q=   0.00000000  0.35355339  0.00000000
+  reading force constants from file 
+ /n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/alpha/Phonon/ph/alpha.dyn5
+  nqs=           24
+ q=  -0.17677670 -0.53033009  0.53033009
+ q=  -0.17677670 -0.53033009 -0.53033009
+ q=  -0.17677670  0.53033009  0.53033009
+ q=  -0.17677670  0.53033009 -0.53033009
+ q=   0.53033009  0.53033009 -0.17677670
+ q=   0.53033009  0.17677670 -0.53033009
+ q=  -0.53033009 -0.53033009  0.17677670
+ q=  -0.53033009  0.53033009  0.17677670
+ q=   0.17677670 -0.53033009 -0.53033009
+ q=   0.17677670  0.53033009  0.53033009
+ q=  -0.53033009  0.53033009 -0.17677670
+ q=   0.53033009  0.53033009  0.17677670
+ q=   0.53033009 -0.53033009 -0.17677670
+ q=   0.53033009 -0.17677670 -0.53033009
+ q=   0.53033009  0.17677670  0.53033009
+ q=  -0.53033009  0.17677670 -0.53033009
+ q=  -0.53033009  0.17677670  0.53033009
+ q=  -0.53033009 -0.17677670  0.53033009
+ q=   0.53033009 -0.17677670  0.53033009
+ q=   0.17677670 -0.53033009  0.53033009
+ q=  -0.53033009 -0.17677670 -0.53033009
+ q=   0.17677670  0.53033009 -0.53033009
+ q=   0.53033009 -0.53033009  0.17677670
+ q=  -0.53033009 -0.53033009 -0.17677670
+  reading force constants from file 
+ /n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/alpha/Phonon/ph/alpha.dyn6
+  nqs=           12
+ q=   0.00000000 -0.35355339  0.35355339
+ q=   0.00000000 -0.35355339 -0.35355339
+ q=   0.00000000  0.35355339  0.35355339
+ q=   0.00000000  0.35355339 -0.35355339
+ q=   0.35355339  0.35355339  0.00000000
+ q=   0.35355339  0.00000000 -0.35355339
+ q=  -0.35355339 -0.35355339  0.00000000
+ q=  -0.35355339  0.35355339  0.00000000
+ q=   0.35355339 -0.35355339  0.00000000
+ q=   0.35355339  0.00000000  0.35355339
+ q=  -0.35355339  0.00000000 -0.35355339
+ q=  -0.35355339  0.00000000  0.35355339
+  reading force constants from file 
+ /n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/alpha/Phonon/ph/alpha.dyn7
+  nqs=            3
+ q=  -0.70710678  0.00000000  0.00000000
+ q=   0.00000000  0.00000000 -0.70710678
+ q=   0.00000000 -0.70710678  0.00000000
+  reading force constants from file 
+ /n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/alpha/Phonon/ph/alpha.dyn8
+  nqs=            6
+ q=  -0.70710678  0.35355339  0.00000000
+ q=   0.70710678  0.00000000  0.35355339
+ q=   0.70710678  0.00000000 -0.35355339
+ q=   0.70710678 -0.35355339  0.00000000
+ q=   0.35355339  0.00000000 -0.70710678
+ q=  -0.35355339  0.00000000  0.70710678
+
+      q-space grid ok, #points =   64
+
+      fft-check success (sum of imaginary terms < 10^-12)
+ 
+     Q2R          :     0.02s CPU         0.16s WALL
+
+ 
+   This run was terminated on:  19:19: 7   1Nov2020            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

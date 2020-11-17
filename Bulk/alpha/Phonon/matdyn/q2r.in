@@ -1,0 +1,6 @@
+&input
+  fildyn   = '/n/holyscratch01/kozinsky_lab/xiey/Stanene_revise/alpha/Phonon/ph/alpha.dyn',
+  zasr='crystal',
+  flfrc='./alpha.fc'
+/
+

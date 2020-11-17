@@ -1,6 +1,7 @@
 # FLARE Force Field for Stanene
 
-- This repository provides the code for developing [FLARE](https://github.com/mir-group/flare) force field of stanene, which is used to generate results in this [paper [1]](https://arxiv.org/abs/2008.11796).
+- This repository provides the code for developing FLARE force field of stanene, which is used to generate results in this [paper [1]](https://arxiv.org/abs/2008.11796).
+- The FLARE code is forked from [MIR-FLARE](https://github.com/mir-group/flare).
 - The generated data reported in the paper has been uploaded to Materials Cloud Archive. You can see it [here [2]](https://archive.materialscloud.org/record/2020.99), including LAMMPS coefficient file for the force field, trajectories and videos.
 
 ## About the versions
@@ -8,12 +9,22 @@
 - The data is NOT generated from the latest version of FLARE. The original version of code for the data is released as [v1.0](https://github.com/YuuuuXie/Stanene_FLARE/releases/tag/v1.0), which does not predict atomic or global energy, and only predicts atomic forces. 
 - But we will try catching up with the latest FLARE repository, and we recommend you to use the latest code that we provide.
 
-## The code consists of
+## The repo consists of
 
-1. On-the-fly (OTF) training of stanene
-2. Postprocessing of OTF training
-3. Hierarchical training of stanene
-4. Postprocessing of Hierarchical training
+- OTF: on-the-fly (OTF) training scripts of stanene, and postprocessing
+- Hierarchical: hierarchical training of stanene, and postprocessing
+- Convergence: force & uncertainty convergence of MGP w.r.t. GP in accuracy
+- Bulk: investigation of alpha & beta phases including phonon and bulk modulus, and molecular dynamics of stanene-bcc transformation
+- Liquid: LAMMPS molecular dynamics of stanene melting process, and ab-initio molecular dynamics of melted tin
+- Timing: speed comparison of different methods
+
+## The repo doesn't consist of
+
+- The dumped GP file (`.pickle` or `.json`) with training data of Sn
+- The LAMMPS coefficient file of MGP
+- The (LAMMPS & ab-initio) molecular dynamics trajectories
+
+because they are too large. The above files are available in [Materials Cloud Archive doi: 10.24435/materialscloud:cs-tf](https://archive.materialscloud.org/record/2020.99) [2]
 
 ## How to cite?
 

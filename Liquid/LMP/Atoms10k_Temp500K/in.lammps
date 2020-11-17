@@ -1,0 +1,35 @@
+units metal 
+boundary p p p 
+atom_style atomic
+#dimension  2
+newton off
+read_data data.lammps
+replicate 20 40 1
+
+### interactions
+pair_style mgp
+pair_coeff * * ../Sn.mgp-3 Sn yes yes 
+#pair_style tersoff
+#pair_coeff * * Sn.tersoff Sn  
+
+mass * 118.71 
+
+velocity all create 300 87287 dist gaussian
+### run
+
+#fix  1 all nve
+#fix 1 all nvt temp 500 500 1
+fix 1 all npt temp 300 300 100 x 0.0 0.0 100 y 0.0 0.0 100 
+dump dump_all all custom 1000 traj.lammps id type x y z
+
+# set up restart
+variable a loop 50
+label loopa
+   run 100000
+   write_restart restart_${a}.dat
+next a
+jump in.lammps loopa
+
+#timer every 100
+#    timestep 0.02
+#run 3000000

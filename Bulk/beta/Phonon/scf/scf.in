@@ -1,0 +1,46 @@
+&CONTROL
+   calculation      = 'scf'
+   verbosity        = 'high'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './out'
+   prefix           = 'scf'
+   etot_conv_thr    = 1e-07
+   forc_conv_thr    = 1e-06
+   pseudo_dir       = '/n/home08/xiey/q-e/pseudo/'
+/
+&SYSTEM
+   ibrav            = 0
+   ecutwfc          = 80
+   ecutrho          = 640
+   occupations      = 'smearing'
+   degauss          = 0.01
+   smearing         = 'mv'
+   ntyp             = 1
+   nat              = 2
+/
+&ELECTRONS
+   electron_maxstep = 200
+   conv_thr         = 1e-13
+   mixing_beta      = 0.7
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Sn 118.71 sn_pbesol_v1.4.uspp.F.UPF
+
+K_POINTS automatic
+16 16 16  0 0 0
+
+CELL_PARAMETERS (angstrom)
+  -2.910503075   2.910503075   1.5725
+   2.910503075  -2.910503075   1.5725
+   2.910503075   2.910503075  -1.5725
+
+ATOMIC_POSITIONS (crystal)
+Sn       0.000000000   0.000000000   0.000000000
+Sn       0.250000000   0.750000000   0.500000000
+

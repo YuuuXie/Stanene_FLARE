@@ -1,0 +1,9 @@
+mgp-1/dft/1000/scf.pwo:     PWSCF        :      3h24m CPU      3h29m WALL
+mgp-1/dft/1980/scf.pwo:     PWSCF        :      3h51m CPU      3h56m WALL
+mgp-1/dft/2900/scf.pwo:     PWSCF        :      5h20m CPU      5h27m WALL
+mgp-2/dft/1000/scf.pwo:     PWSCF        :      3h34m CPU      3h39m WALL
+mgp-2/dft/1750/scf.pwo:     PWSCF        :      3h36m CPU      3h41m WALL
+mgp-2/dft/3000/scf.pwo:     PWSCF        :      3h59m CPU      4h 4m WALL
+mgp-3/dft/1000/scf.pwo:     PWSCF        :      3h43m CPU      3h48m WALL
+mgp-3/dft/1940/scf.pwo:     PWSCF        :      4h22m CPU      4h28m WALL
+mgp-3/dft/3000/scf.pwo:     PWSCF        :      4h 4m CPU      4h 9m WALL

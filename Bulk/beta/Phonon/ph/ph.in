@@ -1,0 +1,10 @@
+ &inputph
+  prefix='scf',
+  outdir='/n/kozinsky_lab/Users/xiey/Stanene/beta-0/scf/out',
+  fildyn   = '/n/kozinsky_lab/Users/xiey/Stanene/beta-0/ph/beta.dyn',
+  ldisp=.true.,
+  nq1=8,
+  nq2=8,
+  nq3=8,
+  tr2_ph   =  1.0d-20,
+ /
