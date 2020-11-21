@@ -8,7 +8,7 @@ from ase.calculators.lammpsrun import LAMMPS
 from ase.optimize import BFGS
 
 species = ["Sn"]
-pot_file = "absb_force_diffcut.mgp"
+pot_file = "abs_f.mgp"
 parameters = {
     "command": os.environ.get("lmp"),  # set up executable for ASE
     "pair_style": "mgp",
@@ -29,8 +29,8 @@ calc = LAMMPS(
 
 #atoms = read("/n/kozinsky_lab/Users/xiey/Stanene/beta-0/scf/scf.in", format="espresso-in")
 #atoms = read("../scf/scf.in", format="espresso-in")
-a = 3.1
-c = 1.6
+a = 2.905
+c = 1.59
 scaled_positions = np.array([[0.0, 0.0, 0.0], [0.25, 0.75, 0.5]])
 cell = np.array([[-a, a, c], [a, -a, c], [a, a, -c]])
 atoms = Atoms(

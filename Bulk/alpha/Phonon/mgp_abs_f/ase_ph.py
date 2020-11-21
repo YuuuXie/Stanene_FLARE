@@ -4,15 +4,17 @@ import matplotlib.pyplot as plt
 from ase.io import read, write
 from ase.phonons import Phonons
 from ase.calculators.lammpsrun import LAMMPS
+from ase import Atoms
 
 species = ["Sn"]
+pot_file = "abs_e.mgp"
 parameters = {
     "command": os.environ.get("lmp"),  # set up executable for ASE
-    "pair_style": "meam/c",
-    "pair_coeff": [f"* * library.meam Sn Sn.meam Sn"],
+    "pair_style": "mgp",
+    "pair_coeff": [f"* * {pot_file} Sn yes yes"],
 }
 
-files = ["library.meam", "Sn.meam"]
+files = [pot_file]
 
 # create ASE calc
 calc = LAMMPS(
@@ -24,13 +26,20 @@ calc = LAMMPS(
     specorder=species,
 )
 
-atoms = read("../scf/scf.in", format="espresso-in")
+a = 3.22
+scaled_positions = np.array([[0.0, 0.0, 0.0], [0.25, 0.25, 0.25]])
+cell = np.array([[0, a, a], [a, 0, a], [a, a, 0]])
+atoms = Atoms(
+    symbols="Sn2",
+    scaled_positions=scaled_positions,
+    cell=cell,
+    pbc=True,
+)
+print(atoms.positions)
+#atoms = read("../scf/scf.in")
+
 N = 8
-
-# first relax
-....
-
-ph = Phonons(atoms, calc, supercell=(N, N, N), delta=0.05)
+ph = Phonons(atoms, calc, supercell=(N, N, N), delta=0.03)
 ph.run()
 ph.read(acoustic=True)
 ph.clean()

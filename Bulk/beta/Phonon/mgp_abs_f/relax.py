@@ -7,7 +7,7 @@ from ase import Atoms
 from ase.calculators.lammpsrun import LAMMPS
 
 species = ["Sn"]
-pot_file = "absb_diffcut_6frames.mgp"
+pot_file = "abs_f.mgp"
 parameters = {
     "command": os.environ.get("lmp"),  # set up executable for ASE
     "pair_style": "mgp",
@@ -26,8 +26,8 @@ calc = LAMMPS(
     specorder=species,
 )
 
-a_list = np.linspace(2.85, 2.95, 11)
-c_list = np.linspace(1.55, 1.65, 11)
+a_list = np.linspace(2.90, 3.0, 11)
+c_list = np.linspace(1.60, 1.65, 11)
 # a, c, c/a 3.028 1.65 0.5449141347424042
 scaled_positions = np.array([[0.0, 0.0, 0.0], [0.25, 0.75, 0.5]])
 
