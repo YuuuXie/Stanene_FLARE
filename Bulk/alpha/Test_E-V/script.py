@@ -8,7 +8,7 @@ from ase import Atoms
 
 
 species = ["Sn"]
-pot_file = "absb_diffcut.mgp"
+pot_file = "abs_f.mgp"
 parameters = {
     "command": os.environ.get("lmp"),  # set up executable for ASE
     "pair_style": "mgp",
