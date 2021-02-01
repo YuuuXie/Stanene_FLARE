@@ -3,7 +3,7 @@
 - This repository provides the code for developing FLARE force field of stanene, which is used to generate results in this [paper [1]](https://arxiv.org/abs/2008.11796).
 - The FLARE package is installed from [MIR-FLARE](https://github.com/mir-group/flare).
   ```
-  pip install mir-flare==1.0.0
+  pip install mir-flare
   ```
 - The generated data reported in the paper has been uploaded to Materials Cloud Archive. You can see it [here [2]](https://archive.materialscloud.org/record/2020.99), including LAMMPS coefficient file for the force field, trajectories and videos.
 
