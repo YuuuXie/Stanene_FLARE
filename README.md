@@ -19,7 +19,7 @@
 
 - Paper:
 
-  [1] Xie, Yu, et al. "Fast Bayesian Force Fields from Active Learning: Study of Inter-Dimensional Transformation of Stanene." arXiv preprint [arXiv:2008.11796](https://arxiv.org/abs/2008.11796) (2020).
+  [1] Xie, Y., Vandermause, J., Sun, L. et al. Bayesian force fields from active learning for simulation of inter-dimensional transformation of stanene. npj Comput Mater 7, 40 (2021). https://doi.org/10.1038/s41524-021-00510-y
 
 - Data:
 
